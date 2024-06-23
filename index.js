@@ -4,8 +4,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const productsEndpoint = 'https://gradistore-spi.herokuapp.com/products/all';
-const shopifyProductsEndpoint = `https://gradiweb-prueba-tecnica.myshopify.com/admin/api/2024-04/products.json`;
-const accessToken = "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";
+const shopifyProductsEndpoint = `https://${process.env.SHOPIFY_STORE_URL}/admin/api/2024-04/products.json`;
+const accessToken = process.env.SHOPIFY_ACCESS_TOKEN;
 
 async function fetchProductsFromExternalAPI() {
     try {
